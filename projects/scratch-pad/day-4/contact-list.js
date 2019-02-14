@@ -42,6 +42,7 @@ function makeContact(id, nameFirst, nameLast) {
         nameFirst: nameFirst,
         nameLast: nameLast
     };
+    
 
 } 
 // contact created 
@@ -54,7 +55,7 @@ function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts = [];
+    let contacts = [];
     
     return {
         // we implemented the length api for you //
@@ -83,20 +84,23 @@ function makeContactList() {
                     return contacts.splice(i, 1);
                 }
             }
-        } 
-        }
-}
+        },
     
+     printAllContactNames: function (){
+        let fullName = "";
+         for (var i =0; i < contacts.length; i++){
+             fullName += contacts[i].nameFirst + ' ' + contacts[i].nameLast + '\n';
+            }return fullName.slice(0, fullName.length -1);
+    }
 
-
-
+}
 
 
 // YOUR CODE GOES ABOVE HERE //
 
 
 
-
+}
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&
 (typeof process.versions.node !== 'undefined')) {
